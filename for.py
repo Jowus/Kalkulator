@@ -1,90 +1,68 @@
-# 1. Wyświetl liczby od 1 do 10.
-for i in range(10):
-    print(i)
-# 2. Oblicz sumę liczb od 1 do 100.
-suma = 0
-for i in range(100):
-    i += 1
-    suma += i
-print(suma)
-# 3. Wyświetl wszystkie parzyste liczby od 1 do 50.
-for i in range(1, 51):
-    if i % 2 == 0:
-        print(i)
-        i += 0
-# 4. Oblicz iloczyn liczb od 1 do 5.
-print(1*2*3*4*5)
-# 5. Wyświetl odwróconą wersję napisu "Hello World!".
-j = "Hello World!"
-k = ""
-for char in j:
-    k = char + k
-print(k)
-# 6. Wyświetl wszystkie litery z podanego słowa.
-inp = input()
-for el in inp: #element z inputa
-    print(el)
-# 7. Oblicz sumę elementów listy liczb.
-lista = [2,3,4,5,2,5,7,86]
-suma = 0
-for el in lista:
-    suma += el
-print(suma)
 
-# 8. Wyświetl wszystkie liczby od 20 do 30, które są podzielne przez 3.
-for i in range(21, 31):
-    if i % 3 == 0:
-        print(i)
-# 9. Znajdź największą liczbę w liście.
-lista2 = [2,4,6,2,33]
-najwieksza = lista2[0]
-for number in lista2:
-    if najwieksza > number:
-        najwieksza = number
-print(number)
-# 10. Wyświetl wszystkie liczby od 1 do 100, które są podzielne jednocześnie przez 3 i 5.
-for i in range(1, 101):
-    if i % 3 == 0 and i % 5 == 0:
-            print(i)
-# 11. Oblicz średnią arytmetyczną z listy liczb.
-lista = [2,3,5,64,2,5,1]
-suma = 0
-for number in lista:
-    suma += number
-print(suma/len(lista))
-# 12. Wyświetl wszystkie litery z podanego zdania, pomijając spacje.
-inp = input()
-spacja = " "
-for i in inp:
-    if i == " ":
-        continue
-    spacja += i
-print(spacja)
-# 13. Oblicz silnię liczby podanej przez użytkownika.
-inp = int(input())
-s = 1
-for i in range(1,inp+1):
-    s *= i
-print(s)
-# 14. Wyświetl tabliczkę mnożenia (od 1 do 20).
-for i in range(1, 21):
-    for w in range(1, 21):
-        res = i * w
-        print(f" {res:3} ", end=" ")
+# 10. Utwórz listę słów i napisz funkcję która wypisze tylko te słowa, które mają więcej niż 5 znaków.
+lista = ["ala", "bartek", "krzysztof"]
+def k(lista, ile):
+    for el in lista:
+        if len(el) > ile:
+            print(f" {el}", end = " ")
     print("\n")
-# 15. Sprawdź, czy podane słowo jest palindromem.
-inp = input()
-palindromem = True
-for i in range(len(inp)//2):
-    if inp[i] != inp[-i - 1]:
-        palindromem = False
-        break
-print(palindromem)
-# 16. Zamień wszystkie litery w podanym napisie na wielkie litery.
-t = 0
-for el in inp:
-    t += el.upper()
-print(t)
-# 17. Wyświetl liczby od 1 do 10 w odwrotnej kolejności.
-for i in range(10,0,-1):
-    print(-i)
+k(lista,5)
+# 11. Napisz funkcję, która zamienia wszystkie litery w danym łańcuchu znaków na duże litery.
+def z(string):
+    print(string.upper())
+z("rower jedzie chodniiem")
+# 12. Utwórz listę liczb i napisz funkcję która znajduje drugą najmniejszą wartość w tej liście.
+def j(lista):
+    list.sort(lista)
+    return(lista[lista2])
+lista2 = [1,2,432,1,3,432,3,41,63,2]
+# print(j(lista2))
+# 13. Napisz funkcję, która liczy wystąpienia danego znaku w danym łańcuchu znaków.
+def q(słowo, znak):
+    ile = 0
+    for el in słowo:
+        if el == znak:
+            ile += 1
+        return ile
+print(q("Komin", "k"))
+# 14. Utwórz listę liczb i napisz funkcję która obliczy sumę wszystkich liczb podzielnych przez 3.
+def g(lista):
+    suma = 0
+    for el in lista:
+        if el % 3 == 0:
+            suma += el
+    return suma
+print(g(lista2))
+# 15. Napisz funkcję, która usuwa duplikaty z danej listy.
+def f(lista):
+    r = []
+    for el in lista:
+        if el not in r:
+            r.append(el)
+    return r
+print(f([1,234,456,23,456]))
+# 16. Utwórz listę liczb i napisz funkcję która  znajdzie najczęściej występujący element w tej liście.
+def b(lista):
+    ile = 0
+    naj = lista[0]
+    for el in lista:
+        if ile < lista.count(el):
+            ile = lista.count(el)
+            naj = ile
+    return naj
+print(b(lista2))
+# 17. Napisz funkcję, która odwraca kolejność elementów w danej liście.
+def t(inp):
+    return inp[::-1]
+print(t("kotek"))
+
+# 18. Utwórz dwie listy i napisz funkcję która połączy je w jedną, tak aby elementy były posortowane rosnąco.
+def h(lista1,lista):
+    lista.extend(lista1)
+    return sorted(lista)
+print(h(lista2, [1,2,4,2,5,21,234]))
+# 19. Utwórz listę liczb i napisz funkcję która znajdzie drugą największą wartość w tej liście.
+def p(lista):
+    lista = sorted(lista)
+    return lista[-2]
+print(p(lista2))
