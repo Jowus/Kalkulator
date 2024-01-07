@@ -68,7 +68,7 @@ def usun(lista: list) -> None:
             print("Nie ma takiej książki")
     else:
         print("Nie ma takiej książki")
-#edytowanie danych w slownikach 
+#edytowanie danych w slownikach / dziala!!!
 def edytowanie(lista:list):
     x = input("Którą książkę chcesz edytować?(podaj id)")
     if istnieje(lista, x):
