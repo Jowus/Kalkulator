@@ -1,22 +1,19 @@
-import time
-
-
-def generate_unix_id():
-    unix_id = int(time.time())
-    return unix_id
-
-
-unique_unix_id = generate_unix_id()
-
+import uuid
 
 k = {
-    "id" : generate_unix_id()
+    "id" : uuid.uuid4()
 }
 ksiazka1 = {
     'nazwa': 'Pan Tadeusz',
     'ilość stron': '375',
     'autor': 'Adam Mickiewicz',
-    'id': generate_unix_id()
+    'id': uuid.uuid4()
+}
+ksiazka2 = {
+    'nazwa': 'Pan Tsz',
+    'ilość stron': '75',
+    'autor': 'Adam Mwicz',
+    'id': uuid.uuid4()
 }
 def informacje(slownik):
     for k,v in slownik.items():
@@ -33,6 +30,7 @@ while True:
     dzialanie = input()
     if "i" == dzialanie:
         informacje(ksiazka1)
+        informacje(ksiazka2)
     elif "e" == dzialanie:
         edytowanie(ksiazka1)
 
